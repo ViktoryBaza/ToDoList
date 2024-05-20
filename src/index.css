@@ -5,9 +5,366 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(228, 228, 228);
+  padding-top: 10px;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.App {
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+
+.App .item-todo {
+
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 15px;
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius:15px;
+  border:0;
+  box-shadow:5px 5px 10px rgba(0,0,0,0.06);
+  width: 47%;
+  height: 100%;
+  word-wrap: break-word;
+ 
+  
+}
+
+.App .item-todo .item-text {
+  display: inline-block;
+  cursor: pointer;
+  width: 90%;
+}
+
+.form-input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid rgb(133, 131, 137);
+  outline: none;
+  background: #f0f0f0;
+  border-radius: 15px 0px 0px 15px;
+  width: 40%;
+}
+
+.App button {
+  padding: 16px 7px;
+  border: none;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  text-transform: capitalize;
+ /*  background: linear-gradient(
+    90deg,
+    rgb(133, 131, 137) 0%,
+    rgb(64, 63, 64) 100%
+  );  */
+}
+
+.App .item-todo .item-delete {
+ /*  display: inline-block; */
+ display: flex;
+ margin: 0 auto;
+  cursor: pointer;
+  float: right;
+  font-size: 22px;
+  position: relative;
+
+  text-align: center;
+}
+
+
+
+.item-strike{
+  margin-top: 300px;
+}
+
+.active {
+  background-color: rgb(17, 19, 47);
+  color: rgb(182, 183, 193);
+  height: 100vh;
+}
+
+.fon{
+  margin-top: -22px;
+}
+
+
+.importance {
+  width: 120px;
+  height: 35px;
+  padding: 4px;
+  border-radius:10px;
+  box-shadow: 2px 2px 8px #999;
+  background: #eee;
+  border: none;
+  outline: none;
+  display: inline-block;
+  margin-right: 20px;
+  -webkit-appearance:none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  text-align: center;
+
+  }
+  option {
+  position: relative;
+  }
+  option:after {
+  content:'<>';
+  font: 11px "Consolas", monospace;
+  color: #666;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 8px; 
+  top:2px;
+  padding: 0 0 2px;
+  border-bottom: 1px solid #ddd;
+  position: absolute;
+  pointer-events: none;
+ 
+  }
+  option:before {
+  content: '';
+  right: 6px; 
+  top:0px;
+  width: 20px; 
+  height: 20px;
+  background: #eee;
+  position: absolute;
+  pointer-events: none;
+  display: block;
+  }
+ .importance-option:hover{
+  background-color: #999;
+ }
+ .filter-buttons{
+  background-color: black;
+  color: aqua;
+ }
+ .filter-buttons-label{
+  color: #0a0a0a;
+  background-color: #0a0a0a;
+ }
+
+ .item-text{
+  margin-top: 4px;
+  margin-left: 5px;
+ }
+ 
+ .complete-task {
+  /* Ваши стили для выполненных задач */
+  background-color: #f0f0f0;
+}
+
+.strike {
+  text-decoration: line-through;
+  /* Дополнительные стили для зачеркнутого текста */
+}
+.pink-popup-fon {
+ width: 100%;
+  height: 100vh; 
+  /* Устанавливаем путь к изображению в качестве фона */
+  background-image: url('./img/helloFon.jpg');
+  /* Вы можете установить другие свойства фона, такие как размер, повторение и позицию */
+  background-size: cover; /* Растягиваем изображение, чтобы оно полностью покрыло фон */
+  background-repeat: no-repeat; /* Изображение не будет повторяться */
+  background-position: center center; /* Размещаем изображение по центру */
+  cursor: url('./img/pav.png'), auto; /* в опере увы не отображается */
+  color:#de63c5;
+}
+.active-form-input{
+  background-color: rgb(232, 233, 246);
+}
+.pink-form-input{
+  background-color: rgb(243, 236, 241);
+}
+
+.popup {
+  position: fixed;
+  background: #c6cacb62;
+  color: #585454;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.popup-from1 {
+  position: fixed;
+  bottom: -50px;  /* начвльная позиция, откуда вылетет  */
+  left: 50%;
+  transform: translateX(-50%);
+  animation: slide-up-from1 1s ease forwards;  /* применяет анимацию и как быстро она должна сработать */
+}
+
+@keyframes slide-up-from1 {
+  to {
+    bottom: 50%;   /*  конечное положение надписи */
+    transform: translate(-50%, 50%); 
+  }
+}
+
+.popup-from2 {
+  position: fixed;
+  bottom: -50px;
+  right: -50px;
+  animation: slide-up-from2 2s ease forwards;
+}
+
+@keyframes slide-up-from2 {
+  to {
+    bottom: 80%;
+    right: 50%;
+   /*  transform: translate(50%, 50%); */
+  }
+}
+.popup-from3 {
+  position: fixed;
+  bottom: -50px;  /* начвльная позиция, откуда вылетет  */
+  left: 20%;
+  transform: translateX(-50%);
+  animation: slide-up-from3 4s ease forwards;  /* применяет анимацию и как быстро она должна сработать */
+}
+
+@keyframes slide-up-from3 {
+  to {
+    bottom: 50%;
+   /*  transform: translate(50%, 50%); */
+  }
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.popup-from4 {
+  position: fixed;
+  top: -50px;  /* начaльная позиция, откуда вылетет  */
+  left: 50%;
+  transform: translateX(-50%);
+  animation: slide-up-from4 2s ease forwards;  /* применяет анимацию и как быстро она должна сработать */
+}
+
+@keyframes slide-up-from4 {
+  to {
+    top: 20%;   /*  конечное положение надписи */
+    transform: translate(-50%, 50%); 
+  }
+}
+.popup-from5 {
+  position: fixed;
+  top: -50px;  /* начaльная позиция, откуда вылетет  */
+  left: 90%;
+  transform: translateX(-50%);
+  animation: slide-up-from5 2s ease forwards;  /* применяет анимацию и как быстро она должна сработать */
+}
+
+@keyframes slide-up-from5 {
+  to {
+    top: 40%;   /*  конечное положение надписи */
+    transform: translate(-50%, 50%); 
+  }
+}
+
+.popup-from6 {
+  position: fixed;
+  top: -50px;  /* начaльная позиция, откуда вылетет  */
+  left: 10%;
+  transform: translateX(-50%);
+  animation: slide-up-from6 2s ease forwards;  /* применяет анимацию и как быстро она должна сработать */
+}
+
+@keyframes slide-up-from6 {
+  to {
+    top: 70%;   /*  конечное положение надписи */
+    transform: translate(-50%, 50%); 
+  }
+}
+.popup-from7 {
+  position: fixed;
+  top: -50px;  /* начaльная позиция, откуда вылетет  */
+  left: 70%;
+  transform: translateX(-50%);
+  animation: slide-up-from7 2s ease forwards;  /* применяет анимацию и как быстро она должна сработать */
+}
+
+@keyframes slide-up-from7 {
+  to {
+    top: 90%;   /*  конечное положение надписи */
+    transform: translate(-50%, 50%); 
+  }
+}
+.popup-from8 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: #c6cacb62;
+  color: #585454;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: popup-from8 4s linear infinite; /* Длительность, тип анимации и повторение (бесконечное) */
+}
+@keyframes popup-from8 {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(300px) translateY(-300px);
+  }
+  50% {
+    transform: translateX(400px) translateY(0);
+  }
+  75% {
+    transform: translateX(500px) translateY(500px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+.popup-from9 {
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  background: #c6cacb62;
+  color: #585454;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: popup-from9 4s linear infinite; /* Длительность, тип анимации и повторение (бесконечное) */
+}
+@keyframes popup-from9 {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-600px) translateY(100px);
+  }
+  50% {
+    transform: translateX(300px) translateY(300);
+  }
+  75% {
+    transform: translateX(800px) translateY(-200px);
+  }
+  100% {
+    transform: translateX(100) translateY(0);
+  }
 }

@@ -1,0 +1,96 @@
+.popup-menu {
+    position: fixed;
+    right: -150px; /* начальное положение за пределами видимости */
+
+    width: 200px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+    height: 100%;
+    background-color: rgb(228, 228, 228);
+  }
+  
+  .popup-menu.open {
+    right: 0;
+  }
+  .popup-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  .popup-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+   
+  }
+  
+  .popup-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0 15px 15px 0;
+    background-color: #f0f0f0;
+  }
+  
+  .popup-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .active-popup{
+    background-color: rgb(17, 19, 47);
+    color: rgb(182, 183, 193);
+  }
+
+  .active-popup li{
+    background-color: rgb(19, 22, 60);
+    color: rgb(182, 183, 193);
+    box-shadow:5px 5px 10px rgba(245, 243, 243, 0.06);
+    border-bottom: 1px solid #0d0d0d;
+  }
+  .active-toDo{
+    background-color: rgb(19, 22, 60);
+    color: rgb(182, 183, 193);
+    box-shadow:5px 5px 10px rgba(245, 243, 243, 0.06);
+    border-bottom: 1px solid #0d0d0d;
+  }
+  .pink-popup{
+    background-color: rgb(245, 185, 240);
+    color: rgb(88, 68, 86);
+    box-shadow:5px 5px 10px rgba(245, 243, 243, 0.06);
+    border-bottom: 1px solid #e6e0e0;
+  }
+
+  .button-Noactive{
+    background: linear-gradient(
+      90deg,
+      rgb(133, 131, 137) 0%,
+      rgb(64, 63, 64) 100%
+    ); 
+  }
+  .button-active{
+    background: linear-gradient(
+      90deg,
+      rgb(62, 20, 147) 0%,
+      rgb(64, 63, 64) 100%
+    ); 
+    text-transform: capitalize;
+  }
+  .button-pink{
+    background: linear-gradient(
+      90deg,
+      rgb(224, 62, 200) 0%,
+      rgb(237, 222, 237) 100%
+    ); 
+    text-transform: capitalize;
+   
+  }
+  .custom-cursor {
+    cursor:  url('./img/pav.png'), auto;
+  }
+  .importance{
+    margin-left: 20px;
+  }
